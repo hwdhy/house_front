@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Scrollbars } from 'react-custom-scrollbars';
 import { LoadingOutlined } from "@ant-design/icons/lib";
 import NoHousePng from "@assets/img/none.png"
+import { HouseFloorList } from "@/base/HouseBaseEntity";
 
 /**
  *  地图房屋列表
@@ -38,7 +39,7 @@ const MapHouseList = ({ orderBy, sortDirection, onSortChange, houseData, onArriv
                   <div className="content">
                     <h3>{item.title}</h3>
                     <div className="desc">
-                      <span className="floor">{item.area}㎡ | {item.floor}/{item.totalFloor}层</span>
+                      <span className="floor">{item.area}㎡ | {HouseFloorList.find(it => { return it.value === item.floor })?.label}</span>
                       <span className="price"><span className="number">¥{item.price}</span>/月</span>
                     </div>
                     <div className="position">

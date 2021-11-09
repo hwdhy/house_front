@@ -137,8 +137,8 @@ const Container = styled.div`
         width: 178px;
         height: 70px;
         img{
-            width: 178px;
-            height: 28px;
+            width: 160px;
+            height: 40px;
         }
     }
     .city-box{

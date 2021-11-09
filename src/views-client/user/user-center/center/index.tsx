@@ -88,7 +88,7 @@ const UserCenter = () => {
                                                 </div>
                                                 <div className="info">
                                                     <div className="name">{item?.title}</div>
-                                                    <div className="price">¥{item?.price}/月</div>
+                                                    <div className="price">¥{item?.price}/㎡/月</div>
                                                 </div>
                                             </Link>
                                         </div>

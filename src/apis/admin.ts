@@ -5,7 +5,7 @@ const AdminApi = {
     return {
       getHouseList: `/admin/houses`,                 //后台房源列表    ***
       uploadPhoto: `/admin/house/upload/photo`,      //上传图片      ***
-      addHouses: `/admin/house/add`                  //新增房源     ****
+      addHouse: `/admin/house/add`                  //新增房源     ****
     };
   },
   getHouseList(data: Object) {

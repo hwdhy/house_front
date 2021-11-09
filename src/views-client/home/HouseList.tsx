@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Col, Empty, Pagination, Row, Spin } from "antd";
 import LazyLoad, { forceCheck } from 'react-lazyload';
 import { Link } from "react-router-dom";
+import { HouseFloorList } from "@base/HouseBaseEntity";
 
 interface HouseListProps {
     data: { total: number, list: Array<any> },
@@ -239,8 +240,11 @@ export const HouseBox = (props) => {
                     <div className="title-container"><span className="icon-sign">厂</span><div className="title">{data.title}</div> </div>
                 </Link>
                 <div className="desc">
-                    <span>{data.area}㎡ | {data.floor}/{data.totalFloor}层 </span>
-                    <span className="price"><span className="number">{data.price}</span> <span className="unit">/月</span></span>
+                    <span>{data.area}㎡ | {HouseFloorList.find(item => {
+                        return item.value === data.floor
+                    })?.label
+                    } </span>
+                    <span className="price"><span className="number">{data.price}</span> <span className="unit">/㎡/月</span></span>
                 </div>
                 <div className="location"><i className="iconfont" style={{ fontSize: "12px" }}>&#xe620;</i>{data.houseDetail?.address}</div>
                 <div className="tag">

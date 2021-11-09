@@ -121,15 +121,15 @@ const Container = styled.div`
 `;
 const LogoContainer = styled.img`
     margin: 0;
-    height: 100%;
-    width: 160px;
+    height: 90%;
+    width: 120px;
     padding: 14px 0;
 `;
 const LocationContainer = styled.div`
     line-height: 25px;
     width: 92px;
     position: relative;
-    height: 60px;
+    height: 100px;
     padding: 14px 0;
     cursor: pointer;
     display: flex;

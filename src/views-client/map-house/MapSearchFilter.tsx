@@ -22,7 +22,7 @@ const MapSearchFilter = ({ searchParams, onChange, onClearAll }) => {
                 const priceMax = priceArr.length > 1 ? priceArr[1] : undefined;
                 onChange({ priceMin: priceMin, priceMax: priceMax, priceRange: params.key });
             }} />
-            <FilterItemComponent value={searchParams.direction} name={directionItems.find(item => item.value === searchParams.direction)?.title || "朝向"}
+            <FilterItemComponent value={searchParams.direction} name={directionItems.find(item => item.value === searchParams.direction)?.title || "厂房结构"}
                 items={directionItems} onSelect={(params) => onChange({ direction: params.key })} />
             <MoreOptionComponent moreOptions={{
                 tags: searchParams.tags,
@@ -35,20 +35,18 @@ const MapSearchFilter = ({ searchParams, onChange, onClearAll }) => {
     )
 };
 // 合租方式下拉项
-const rentWayItems = [{ value: "null", title: "不限" }, { value: "1", title: "合租" }, { value: "2", title: "整租" }];
+const rentWayItems = [{ value: "null", title: "不限" }, { value: "1", title: "整租" }, { value: "2", title: "合租" }];
 const priceItems = [{ value: "null", title: "不限" },
-{ value: "0-1500", title: "1500元以下" },
-{ value: "1500-2500", title: "1500-2500元" },
-{ value: "2500-4000", title: "2500-4000元" },
-{ value: "4000-6000", title: "4000-6000元" },
-{ value: "6000-8000", title: "6000-8000元" },
-{ value: "8000-10000", title: "8000-10000元" },
-{ value: "10000-", title: "10000元以上" },
+{ value: "0-10", title: "10/㎡/月" },
+{ value: "10-15", title: "10-15/㎡/月" },
+{ value: "15-20", title: "15-20/㎡/月" },
+{ value: "20-25", title: "20-25/㎡/月" },
+{ value: "25-30", title: "25-30/㎡/月" },
+{ value: "30-35", title: "30-35/㎡/月" },
+{ value: "35-", title: "35/㎡/月以上" },
 ];
-const directionItems = [{ value: "null", title: "不限" }, { value: "2", title: "南" }, { value: "4", title: "北" }, { value: "1", title: "东" }, { value: "3", title: "西" },];
+const directionItems = [{ value: "null", title: "不限" }, { value: "1", title: "标准厂房" }, { value: "2", title: "钢结构" }, { value: "3", title: "其他" }];
 const houseTagsOption = HouseTagList.map((item: any) => ({ label: item, value: item }));
-const rentTypeOptions = [{ label: "年租", value: 1 }, { label: "可短租", value: 2 }];
-const houseStatusOptions = [{ label: "可立即入住", value: 1 }, { label: "可预定", value: 2 }];
 
 // 过滤项
 const FilterItemComponent = (props) => {

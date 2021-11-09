@@ -15,11 +15,10 @@ import { handleResponse } from "@utils/handle-reponse";
 import { Link, useHistory } from "react-router-dom";
 import Tools from "@utils/tools";
 import { Prompt } from 'react-router'
+import { HouseFloorList } from "@/base/HouseBaseEntity";
 
 const { TabPane } = Tabs;
-/**
- * 
- */
+
 const HouseManage = () => {
 
     const [searchParams, setSearchParams] = useState({
@@ -122,7 +121,7 @@ const HouseManage = () => {
     const dataSource = houseData.list.map((item: any) => ({
         key: item.id,
         price: item.price,
-        lastUpdateTime: item.lastUpdateTime,
+        lastUpdateTime: item.UpdatedAt,
         house: item
     }));
 
@@ -243,8 +242,8 @@ const HouseInfo = ({ data }) => {
                         {data.title}
                     </p>
                 </Link>
-                <p>{data.floor}/{data.totalFloor}层 | {data.area}平方米 | {data.houseDetail?.rentWay === 1 ? "整租" : "分租"}</p>
-                <p>发布时间：{moment(data.createTime).format("YYYY/MM/DD hh:mm:ss")}</p>
+                <p>{HouseFloorList.find(item => { return item.value === data.floor })?.label} | {data.houseDetail?.rentWay === 1 ? "整租" : "分租"}</p>
+                <p>发布时间：{moment(data.created_at).format("YYYY/MM/DD hh:mm:ss")}</p>
                 <p><span style={{ marginRight: 10 }}><HeartOutlined /> 0次</span><EyeOutlined /> 0次</p>
             </div>
         </HouseInfoContainer>

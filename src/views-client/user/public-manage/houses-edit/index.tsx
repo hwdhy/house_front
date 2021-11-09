@@ -46,32 +46,23 @@ const HouseEdit = (props) => {
                 const cover = imageList.find(item => item.url === data.house.cover)?.uid;
                 const form = {
                     id: houseId,
-                    title: data.house.title,
+                    address: data.house.houseDetail.address,
                     city: data.city.enName,
                     region: data.house.regionEnName,
                     street: data.house.street,
-                    district: data.house.district,
-                    address: data.house.houseDetail.address,
-                    direction: data.house.direction,
-                    room: data.house.room,
-                    parlour: data.house.parlour,
-                    bathroom: data.house.bathroom,
                     floor: data.house.floor,
+                    direction: data.house.direction,
                     area: data.house.area,
-                    price: data.house.price,
-                    buildYear: moment(data.house.buildYear, "YYYY"),
                     rentWay: data.house.houseDetail.rentWay,
-                    totalFloor: data.house.totalFloor,
-                    distanceToSubway: data.house.distanceToSubway,
-                    tags: data.house.tags,
-                    layoutDesc: data.house.houseDetail.layoutDesc,
-                    traffic: data.house.houseDetail.traffic,
-                    roundService: data.house.houseDetail.roundService,
-                    description: data.house.houseDetail.description,
+                    price: data.house.price,
+                    title: data.house.title,
                     picture: {
                         imageList: imageList,
                         cover: cover
-                    }
+                    },
+                    tags: data.house.tags,
+                    description: data.house.houseDetail.description,
+
                 };
                 if (city.enName !== data.city.enName) {
                     StorageUtil.set(USER_CITY_KEY, data.city.enName);

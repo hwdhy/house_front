@@ -25,7 +25,6 @@ export const BROWSER_HISTORY_KEY = "BROWSER_HISTORY";
 
 const HouseDetail = (props) => {
 
-
     const loading = useSelector(state => state.house.loading);
 
     const houseId = props.match.params.houseId;

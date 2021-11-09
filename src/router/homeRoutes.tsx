@@ -28,29 +28,29 @@ export default [
     render: () => <Redirect to={"/home"} />
   },
 
-  {
-    path: "/UserSetting",
-    meta: { title: '个人信息', showInHeader: false },
-    component: SuspenseComponent(UserSetting),
-  },
-  {
-    path: "/home",
-    meta: { title: '主页', showInHeader: true },
-    component: SuspenseComponent(Home),
-  },
-  {
-    path: "/houseList",
-    meta: { title: '房源列表', showInHeader: true },
-    component: SuspenseComponent(HouseList),
-  },
-  {
-    path: "/addHouse",
-    meta: { title: '添加房源', showInHeader: true },
-    component: SuspenseComponent(AddHouse)
-  },
-  {
-    path: "/editHouse/:houseId",
-    meta: { title: '编辑房源', showInHeader: false },
-    component: SuspenseComponent(EditHouse)
-  },
+  // {
+  //   path: "/UserSetting",
+  //   meta: { title: '个人信息', showInHeader: false },
+  //   component: SuspenseComponent(UserSetting),
+  // },
+  // {
+  //   path: "/home",
+  //   meta: { title: '主页', showInHeader: true },
+  //   component: SuspenseComponent(Home),
+  // },
+  // {
+  //   path: "/houseList",
+  //   meta: { title: '房源列表', showInHeader: true },
+  //   component: SuspenseComponent(HouseList),
+  // },
+  // {
+  //   path: "/addHouse",
+  //   meta: { title: '添加房源', showInHeader: true },
+  //   component: SuspenseComponent(AddHouse)
+  // },
+  // {
+  //   path: "/editHouse/:houseId",
+  //   meta: { title: '编辑房源', showInHeader: false },
+  //   component: SuspenseComponent(EditHouse)
+  // },
 ]

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Popover, Skeleton } from "antd";
 import { QuestionCircleOutlined } from "@ant-design/icons/lib";
 import { useSelector } from "react-redux"
-import { HouseDirectionList } from "../../base/HouseBaseEntity";
+import { HouseDirectionList, HouseFloorList } from "../../base/HouseBaseEntity";
 /**
  * 右侧房屋详细信息
  */
@@ -19,7 +19,7 @@ const RightHouseDetailInfo = () => {
             <div className="price"><span className="icon">￥</span>
                 <span className="number">
                     {houseInfo.price}
-                </span>/月
+                </span>/㎡/月
             </div>
             <div className="tags">
                 {houseInfo?.tags.map((item, index) => <span key={index}>{item}</span>)}
@@ -31,11 +31,11 @@ const RightHouseDetailInfo = () => {
                 </div>
                 <div className="info-block">
                     <div className="value">{HouseDirectionList.find(item => item.value === houseInfo.direction)?.label}</div>
-                    <div className="name">朝向</div>
+                    <div className="name">结构</div>
                 </div>
                 <div className="info-block">
-                    <div className="value">{houseInfo.room}室{houseInfo.parlour}厅{houseInfo.bathroom}卫</div>
-                    <div className="name">户型</div>
+                    <div className="value">{HouseFloorList.find(item => item.value === houseInfo.floor)?.label}</div>
+                    <div className="name">楼层</div>
                 </div>
             </div>
             <div className="detail">
@@ -47,7 +47,7 @@ const RightHouseDetailInfo = () => {
                         </div>
                     </Popover>
                     <Popover content={<div style={{ width: 300, color: "rgba(0,0,0,.6)" }}>
-                        房源详情页标注的房源到地铁站距离实际为该房源所在小区到地铁站的步行距离。当小区面积较大时，距离有一定误差，标注距离仅供参考，请以实际看房为准。
+                        房源详情页标注的房源地址,标注距离仅供参考，请以实际看房为准。
                     </div>}>
                         <QuestionCircleOutlined style={{
                             fontSize: "20px",
@@ -60,24 +60,16 @@ const RightHouseDetailInfo = () => {
                     </Popover>
                 </div>
                 <div className="detail-block">
-                    <div className="name">楼层</div>
-                    <div className="value">{houseInfo.floor}/{houseInfo.totalFloor}</div>
-                </div>
-                <div className="detail-block">
                     <div className="name">电梯</div>
                     <div className="value">有</div>
                 </div>
                 <div className="detail-block">
-                    <div className="name">年代</div>
-                    <div className="value">{houseInfo.buildYear}年建成</div>
+                    <div className="name">面积</div>
+                    <div className="value">大小都可分租</div>
                 </div>
                 <div className="detail-block">
-                    <div className="name">门锁</div>
-                    <div className="value">智能门锁</div>
-                </div>
-                <div className="detail-block">
-                    <div className="name">绿化</div>
-                    <div className="value">40%</div>
+                    <div className="name">宿舍</div>
+                    <div className="value">按需分配</div>
                 </div>
             </div>
         </Container>

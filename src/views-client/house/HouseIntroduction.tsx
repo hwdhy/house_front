@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-// import { HouseDevicesConfigIcon } from "../../base/HouseBaseEntity";
 import { useSelector } from "react-redux"
 
 /**

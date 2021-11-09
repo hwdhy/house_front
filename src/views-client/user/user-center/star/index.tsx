@@ -6,7 +6,7 @@ import { handleResponse } from "@utils/handle-reponse";
 import moment from "moment";
 import { DeleteOutlined } from "@ant-design/icons/lib";
 import { Link } from "react-router-dom";
-import { HouseStatusMap } from "@base/HouseBaseEntity";
+import { HouseFloorList, HouseStatusMap } from "@base/HouseBaseEntity";
 import Tools from "@utils/tools";
 
 
@@ -107,7 +107,7 @@ const UserStar = () => {
         house: item,
         price: item.price,
         status: item.status,
-        createTime: item.createTime,
+        createTime: item.CreatedAt,
         starNumber: item.starNumber,
     }));
 
@@ -187,7 +187,7 @@ export const HouseInfoColumnComponent = ({ data }) => {
                         {data.title}
                     </p>
                 </Link>
-                <p>{data.floor}/{data.totalFloor}层 | {data.area}平方米 | {data.houseDetail?.rentWay === 1 ? "整租" : "分租"}</p>
+                <p>{HouseFloorList.find(item => { return item.value === data.floor })?.label} | {data.area}平方米 | {data.houseDetail?.rentWay === 1 ? "整租" : "分租"}</p>
             </div>
         </HouseInfoContainer>
     )
