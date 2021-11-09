@@ -16,16 +16,6 @@ const HouseIntroduction = () => {
                 <div className="house-desc">
                     {houseInfo?.houseDetail?.description || "这个人很懒，没有房屋描述"}
                 </div>
-                <div className="tag-icons">
-                    {
-                        houseInfo.tags.map(item => (
-                            <div className="tag" key={item}>
-                                <i className={`iconfont ${item} icon`} />
-                                <div className="name">{item}</div>
-                            </div>
-                        ))
-                    }
-                </div>
             </div>
         </Container>
     )
