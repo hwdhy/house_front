@@ -161,9 +161,9 @@ const HouseImagePreview = () => {
                     </>
                 }
                 <div className="swiper-wrapper">
-                    <div className="swiper-slide"><img src={cover} alt="" /></div>
+                    <div className="swiper-slide"><img src={cover?.replace(/(.*)\./, '$1_764x573.')} alt="" /></div>
                     {
-                        pictureList.map(item => <div className="swiper-slide" key={item.id}><img src={item.cdnPrefix + item.path} alt="" /></div>)
+                        pictureList.map(item => <div className="swiper-slide" key={item.id}><img src={(item.cdnPrefix + item.path)?.replace(/(.*)\./, '$1_764x573.')} alt="" /></div>)
                     }
                 </div>
             </div>
@@ -181,7 +181,7 @@ const HouseImagePreview = () => {
                     <div className={"swiper-slide " + (activeNav === 0 ? "active-nav" : "")}><img src={cover} alt="" /></div>
                     {
                         pictureList.map((item, index) => <div key={item.id} className={"swiper-slide " + (activeNav === index + 1 ? "active-nav" : "")}
-                            onClick={() => handleThumbClick(index + 1)}><img src={item.cdnPrefix + item.path} alt="" />
+                            onClick={() => handleThumbClick(index + 1)}><img src={(item.cdnPrefix + item.path)?.replace(/(.*)\./, '$1_764x573.')} alt="" />
                         </div>)
                     }
                 </div>

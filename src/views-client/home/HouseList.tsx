@@ -227,7 +227,7 @@ export const HouseBox = (props) => {
                     target="_blank"
                 >
                     <LazyLoad height="100%" placeholder={<div style={{ height: "100%", display: "flex", justifyContent: "center", alignItems: "center", fontSize: "30px" }}>图片加载中...</div>}>
-                        <img src={data.cover?.replace('.', '_370x270.')} style={{ objectFit: "cover", width: "100%", height: "100%" }} alt={data.title} />
+                        <img src={data.cover?.replace(/(.*)\./, '$1_370x270.')} style={{ objectFit: "cover", width: "100%", height: "100%" }} alt={data.title} />
                     </LazyLoad>
                 </Link>
             </div>
