@@ -2,7 +2,7 @@ import request from '@/utils/request';
 
 const base = '/baiduApi';
 
-const ACCESS_KEY = "kKVY2bXNVtE3hqDKatj6r3Ao3ihKKWsL";
+const ACCESS_KEY = "r5Gvr4jWyNnn6YSV9LvEwGHTBysodg5n";
 
 const BaiduApi = {
 
