@@ -100,6 +100,8 @@ const LoginRegisterModal = ({ type, onTypeChange, visible, onCancel, onOk }) => 
             if (res) {
                 dispatch(loginIn(res, res.token));
                 onOk();
+            }else {
+                message.error("该手机号已注册");
             }
         })
     };
